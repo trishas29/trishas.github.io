@@ -1,0 +1,27 @@
+# Sistema operativo
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Dipendenze
+/node_modules
+
+# File di build
+/dist
+/build
+
+# File di ambiente
+.env
+
+# Log
+*.log
+
+# Cache
+.cache/
+
+# Altri file/cartelle specifici del tuo progetto
