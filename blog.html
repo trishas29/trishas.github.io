@@ -74,6 +74,21 @@
             text-decoration: none;
             font-weight: bold;
         }
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            position: absolute;
+            top: 20px;
+            right: 20px;
+        }
+        .menu-toggle span {
+            width: 25px;
+            height: 3px;
+            background-color: #333;
+            margin: 3px 0;
+            transition: 0.4s;
+        }
         @media (max-width: 768px) {
             body {
                 padding: 15px;
@@ -81,13 +96,26 @@
             header {
                 flex-direction: column;
             }
+            .menu-toggle {
+                display: flex;
+            }
             nav {
-                margin-top: 20px;
-                text-align: left;
+                display: none;
+                width: 100%;
+                text-align: center;
+                padding: 20px 0;
+                background-color: #f8f9fa;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                z-index: 1000;
+            }
+            nav.active {
+                display: block;
             }
             nav a {
-                display: inline-block;
-                margin: 5px 10px 5px 0;
+                display: block;
+                margin: 10px 0;
             }
             .social-links {
                 margin-top: 10px;
@@ -115,6 +143,11 @@
     </style>
 </head>
 <body>
+    <div class="menu-toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
     <header>
         <div>
             <h1>Daniele D'Avino</h1>
@@ -149,10 +182,14 @@
             <a href="#" class="read-more">Read here</a>
         </div>
 
-
-
         <!-- Puoi aggiungere più post seguendo lo stesso modello -->
 
     </main>
+
+    <script>
+        document.querySelector('.menu-toggle').addEventListener('click', function() {
+            document.querySelector('nav').classList.toggle('active');
+        });
+    </script>
 </body>
 </html>
