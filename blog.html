@@ -75,6 +75,9 @@
             font-weight: bold;
         }
         @media (max-width: 768px) {
+            body {
+                padding: 15px;
+            }
             header {
                 flex-direction: column;
             }
@@ -83,8 +86,30 @@
                 text-align: left;
             }
             nav a {
-                display: block;
-                margin: 10px 0;
+                display: inline-block;
+                margin: 5px 10px 5px 0;
+            }
+            .social-links {
+                margin-top: 10px;
+            }
+            .social-links a {
+                margin-right: 10px;
+            }
+            .social-links svg {
+                width: 22px;
+                height: 22px;
+            }
+            h1 {
+                font-size: 1.8em;
+            }
+            .separator {
+                width: 50%;
+            }
+            .blog-post {
+                padding: 10px 0;
+            }
+            .blog-post h2 {
+                font-size: 1.5em;
             }
         }
     </style>
