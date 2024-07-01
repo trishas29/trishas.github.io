@@ -5,167 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Daniele D'Avino - CV</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
-    <style>
-        body {
-            font-family: 'Inter', sans-serif;
-            line-height: 1.6;
-            color: #333;
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-        header {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-        }
-        h1 {
-            color: #2c3e50;
-            margin-bottom: 5px;
-        }
-        .contact-info {
-            margin-bottom: 20px;
-            color: #7f8c8d;
-        }
-        .section {
-            margin-bottom: 50px;
-        }
-        .section h3 {
-            color: #2c3e50;
-            padding-bottom: 5px;
-        }
-        .job {
-            margin-bottom: 30px;
-            padding: 15px;
-            background-color: #f8f9fa;
-            border-radius: 5px;
-        }
-        .job-title {
-            font-weight: bold;
-        }
-        .job-period {
-            font-style: italic;
-            color: #7f8c8d;
-        }
-        ul {
-            padding-left: 20px;
-        }
-        nav {
-            text-align: right;
-        }
-        nav a {
-            margin-left: 15px;
-            text-decoration: none;
-            color: #3498db;
-        }
-        .active {
-            font-weight: bold;
-            text-decoration: underline;
-        }
-        .separator {
-            width: 30%;
-            margin: 40px auto;
-            border-top: 2px solid #e0e0e0;
-        }
-        .download-btn {
-            display: inline-block;
-            padding: 10px 20px;
-            background-color: #f8f9fa;
-            color: #3498db;
-            text-decoration: none;
-            border: 1px solid #3498db;
-            border-radius: 5px;
-            margin-top: 20px;
-            transition: all 0.3s ease;
-        }
-        .download-btn:hover {
-            background-color: #3498db;
-            color: white;
-        }
-        .social-links {
-            margin-top: 15px;
-        }
-        .social-links a {
-            margin-right: 15px;
-            text-decoration: none;
-        }
-        .social-links svg {
-            width: 24px;
-            height: 24px;
-            fill: #3498db;
-        }
-        .menu-toggle {
-            display: none;
-            flex-direction: column;
-            cursor: pointer;
-            position: absolute;
-            top: 20px;
-            right: 20px;
-        }
-        .menu-toggle span {
-            width: 25px;
-            height: 3px;
-            background-color: #333;
-            margin: 3px 0;
-            transition: 0.4s;
-        }
-        @media (max-width: 768px) {
-            body {
-                padding: 15px;
-            }
-            header {
-                flex-direction: column;
-            }
-            .menu-toggle {
-                display: flex;
-            }
-            nav {
-                display: none;
-                width: 100%;
-                text-align: center;
-                padding: 20px 0;
-                background-color: #f8f9fa;
-                position: absolute;
-                top: 60px;
-                left: 0;
-                z-index: 1000;
-            }
-            nav.active {
-                display: block;
-            }
-            nav a {
-                display: block;
-                margin: 10px 0;
-            }
-            .social-links {
-                margin-top: 10px;
-            }
-            .social-links a {
-                margin-right: 10px;
-            }
-            .social-links svg {
-                width: 22px;
-                height: 22px;
-            }
-            h1 {
-                font-size: 1.8em;
-            }
-            .section h3 {
-                font-size: 1.5em;
-            }
-            .separator {
-                width: 50%;
-            }
-            .job {
-                padding: 10px;
-            }
-            .download-btn {
-                display: block;
-                text-align: center;
-                margin-top: 15px;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <div class="menu-toggle">
@@ -173,6 +13,11 @@
         <span></span>
         <span></span>
     </div>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="cv.html" class="active">CV</a>
+        <a href="blog.html">Blog</a>
+    </nav>
     <header>
         <div>
             <h1>Daniele D'Avino</h1>
@@ -188,16 +33,11 @@
                 </a>
             </div>
         </div>
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="cv.html" class="active">CV</a>
-            <a href="blog.html">Blog</a>
-        </nav>
     </header>
 
     <div class="contact-info">
         <p>Milano/Domodossola – Italy</p>
-        <p> Phone: +393474375275</p>
+        <p>Phone: +393474375275</p>
     </div>
 
     <div class="separator"></div>
@@ -314,6 +154,13 @@
     <script>
         document.querySelector('.menu-toggle').addEventListener('click', function() {
             document.querySelector('nav').classList.toggle('active');
+        });
+        var currentPage = window.location.pathname.split("/").pop();
+        var navLinks = document.querySelectorAll('nav a');
+        navLinks.forEach(function(link) {
+            if (link.getAttribute('href') === currentPage) {
+                link.classList.add('active');
+            }
         });
     </script>
 </body>
