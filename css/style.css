@@ -39,7 +39,7 @@ h2 {
 .social-links svg {
     width: 24px;
     height: 24px;
-    fill: #3498db;
+    fill: #7c0404;
 }
 
 .separator {
@@ -79,7 +79,7 @@ nav {
 
 nav a {
     margin-left: 15px;
-    color: #3498db;
+    color: #760000;
     text-decoration: none;
 }
 
@@ -126,7 +126,7 @@ nav a {
 }
 
 .read-more {
-    color: #3498db;
+    color: #810404;
     text-decoration: none;
     font-weight: bold;
 }
