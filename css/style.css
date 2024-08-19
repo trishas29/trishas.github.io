@@ -132,7 +132,10 @@ nav a {
     font-weight: bold;
 }
 
-/* New styles for image alignment */
+/* style.css */
+
+/* Other styles remain the same */
+
 .image-container {
     display: flex;
     flex-wrap: wrap;
@@ -146,7 +149,7 @@ nav a {
     box-sizing: border-box;
     overflow: hidden;
     position: relative;
-    padding-top: 40%; /* Change this value to make the images shorter (e.g., 40% for a shorter height) */
+    padding-top: 50%; /* Adjust height as needed */
 }
 
 .portfolio-box {
@@ -180,71 +183,21 @@ img {
     display: block;
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Ensure the image covers the container while maintaining aspect ratio */
+    object-fit: cover;
     border-radius: 8px;
+}
+
+/* Specific fix for the image where your head isn't showing */
+.fix-image {
+    object-position: top; /* Adjusts the image to focus on the top part */
 }
 
 /* Media queries for responsive design */
 @media (max-width: 768px) {
-    body {
-        padding: 15px;
-    }
-    header {
-        flex-direction: column;
-    }
-    .menu-toggle {
-        display: block;
-    }
-    nav {
-        display: none;
-        position: fixed;
-        top: 0;
-        right: -250px;
-        width: 250px;
-        height: 100%;
-        background-color: #f8f9fa;
-        transition: right 0.3s ease;
-        padding: 60px 20px 20px;
-        box-shadow: -2px 0 5px rgba(0,0,0,0.1);
-    }
-    nav.active {
-        display: block;
-        right: 0;
-    }
-    nav a {
-        display: block;
-        margin: 20px 0;
-        color: #333;
-        text-decoration: none;
-        font-size: 18px;
-    }
-    .social-links {
-        margin-top: 10px;
-    }
-    .social-links a {
-        margin-right: 10px;
-    }
-    .social-links svg {
-        width: 22px;
-        height: 22px;
-    }
-    h1 {
-        font-size: 1.8em;
-    }
-    h2 {
-        font-size: 1.2em;
-    }
-    .separator {
-        width: 50%;
-    }
-
-    /* Adjust image container for small screens */
-    .image-container {
-        flex-direction: column;
-        align-items: center;
-    }
     .portfolio-card {
         max-width: 90%;
         margin-bottom: 20px;
+        padding-top: 50%; /* Maintain the same aspect ratio adjustment */
     }
 }
+
